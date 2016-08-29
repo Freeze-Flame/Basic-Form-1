@@ -32,7 +32,8 @@ namespace August22_1
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Please enter numbers in both spaces",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
