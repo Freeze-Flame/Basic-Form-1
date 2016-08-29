@@ -22,7 +22,19 @@ namespace August22_1
             double hourlyPayRate;
             double grossPay;
 
-            hoursWorked = double.TryParse(tbHoursWorked.Text);
+            if (double.TryParse(tbHoursWorked.Text, out hoursWorked)
+                && double.TryParse(tbHourlyPayRate.Text, 
+                out hourlyPayRate))
+            {
+                grossPay = hourlyPayRate * hoursWorked;
+                MessageBox.Show("Gross Pay" + grossPay.ToString("c")
+                    );
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
